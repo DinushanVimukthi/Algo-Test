@@ -12,20 +12,12 @@ def get_ethernet_ip():
     network_data = {}
 
     for interface, addrs in psutil.net_if_addrs().items():
-        # Check if the interface family contains "AF_INET" and AF_INET6 then get network information netmask, broadcast address, and IP address
-        for addr in addrs:
-            if addr.family == AF_INET:
-                network_data[interface] = {
-                    "netmask": addr.netmask,
-                    "broadcast": addr.broadcast,
-                    "ip": addr.address,
-                }
-            if addr.family == AF_INET6:
-                network_data[interface] = {
-                    "netmask": addr.netmask,
-                    "broadcast": addr.broadcast,
-                    "ip": addr.address,
-                }
+        # Check if the interface is an Ethernet interface
+        if interface.startswith("eth") or interface.startswith("en"):
+            for addr in addrs:
+                if addr.family == AF_INET:
+                    network_data[interface] = addr.address
+
     return network_data
 
 
