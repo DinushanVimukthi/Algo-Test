@@ -2,8 +2,8 @@
 
 # DIR Variable   - '/home/cloudnet/dinushan'
 DIR='/home/cloudnet/dinushan'
-HOST_PATH='Hosts/WS'
-Observer_PATH='Hosts/Observer'
+HOST_PATH='/scripts/Hosts/WS'
+Observer_PATH='/scripts/Hosts/Observer'
 
 # navigate to the directory
 cd $DIR
