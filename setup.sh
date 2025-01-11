@@ -4,9 +4,13 @@
 DIR='/home/cloudnet/dinushan'
 HOST_PATH='/scripts/Hosts/WS'
 Observer_PATH='/scripts/Hosts/Observer'
+FOLDER_NAME='Algo-Test'
 
 # navigate to the directory
 cd $DIR
+
+# Remove the existing project folder
+rm -rf $FOLDER_NAME
 
 # Clone the project from the git repository
 git clone https://github.com/DinushanVimukthi/Algo-Test.git
