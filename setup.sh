@@ -43,6 +43,8 @@ fi
 
 FULL_PATH=$DIR$FOLDER_NAME$FILE_PATH
 
+echo "Using the file: $FULL_PATH"
+
 # Run the python script
 python3 main.py $FULL_PATH
 
