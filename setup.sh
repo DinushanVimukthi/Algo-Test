@@ -10,7 +10,7 @@ FOLDER_NAME='Algo-Test'
 cd $DIR
 
 # Remove the existing project folder
-rm -rf $FOLDER_NAME
+rm -rfd $FOLDER_NAME
 
 # Clone the project from the git repository
 git clone https://github.com/DinushanVimukthi/Algo-Test.git
