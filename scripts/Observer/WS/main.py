@@ -18,7 +18,7 @@ async def perform_action_on_host(host_id):
     print(f"Action on host {host_id} completed")
 
 
-async def handle_connection(websocket, path):
+async def handle_connection(websocket):
     global host_data_map
     try:
         async for message in websocket:
