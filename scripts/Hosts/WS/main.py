@@ -16,7 +16,7 @@ def get_ethernet_ip():
         if interface.startswith("br") or interface.startswith("br"):
             for addr in addrs:
                 if addr.family == AF_INET:
-                    network_data[interface] = addr.address
+                    network_data[interface] = addr
 
     return network_data
 
