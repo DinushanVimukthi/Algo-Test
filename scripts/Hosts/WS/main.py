@@ -12,9 +12,8 @@ def get_ethernet_ip():
     network_data = {}
 
     for interface, addrs in psutil.net_if_addrs().items():
-        print(interface)
         # Check if the interface is an Ethernet interface
-        if interface.startswith("eth") or interface.startswith("en"):
+        if interface.startswith("br") or interface.startswith("br"):
             for addr in addrs:
                 if addr.family == AF_INET:
                     network_data[interface] = addr.address
