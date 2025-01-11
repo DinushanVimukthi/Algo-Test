@@ -31,6 +31,9 @@ async def send_update_data(websocket, host_id, cpu, memory):
     }
     await websocket.send(json.dumps(data))
     print(f"Sent update data for {host_id}: {data}")
+#     Print new line
+    print()
+
 
 
 async def send_metrics(server_ip):
