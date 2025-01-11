@@ -6,6 +6,8 @@ HOST_PATH='/scripts/Hosts/WS/main.py'
 Observer_PATH='/scripts/Observer/WS/main.py'
 FOLDER_NAME='Algo-Test'
 
+SERVER_IP=10.22.196.151
+
 # navigate to the directory
 cd $DIR
 
@@ -43,10 +45,13 @@ fi
 
 FULL_PATH=$DIR$FOLDER_NAME$FILE_PATH
 
+
+
+
 echo "Using the file: $FULL_PATH"
 
 # Run the python script
-python3 $FULL_PATH
+python3 $FULL_PATH $SERVER_IP
 
 
 

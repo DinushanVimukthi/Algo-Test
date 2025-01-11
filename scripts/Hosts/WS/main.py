@@ -5,6 +5,7 @@ import asyncio
 import websockets
 import json
 import time
+import sys
 
 
 def get_ethernet_ip():
@@ -39,8 +40,9 @@ async def send_update_data(websocket, host_id, cpu, memory):
     await websocket.send(json.dumps(data))
     print(f"Sent update data for {host_id}: {data}")
 
-async def send_metrics():
-    uri = "ws://0.0.0.0:8000"
+
+async def send_metrics(server_ip):
+    uri = "ws://" + server_ip + ":8000"
     try:
         async with websockets.connect(uri) as websocket:
             while True:
@@ -91,6 +93,12 @@ async def send_metrics():
         pass
 
 
-#  run send_metrics function when pass the argument send_metrics
-
-asyncio.run(send_metrics())
+# Get server ip address as argument from the command line
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        server_ip=sys.argv[1]
+        print("Usage: python main.py ", server_ip)
+        asyncio.run(send_metrics(server_ip))
+    else:
+        print("Please provide the server IP address as an argument.")
+        sys.exit(1)
